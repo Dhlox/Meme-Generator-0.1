@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meme Generator 0.1</title>
+  <style>
+    .image {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="gerarImagens()">Gerar Meme</button>
+  <div id="container"></div>
+
+  <script>
+    var clickCount = 0;
+
+    function gerarImagens() {
+      var container = document.getElementById("container");
+      container.innerHTML = "";
+
+      var imageURL = "";
+
+      if (clickCount === 0) {
+        imageURL = "https://cdn.discordapp.com/attachments/1125142352579801088/1125215989668261948/SPOILER_72731188c41fe77c584e6460cf4653a1d9779bfd526500bee442ff0bb8a11cb4_1.jpg";
+      } else if (clickCount === 1) {
+        imageURL = "https://media.discordapp.net/attachments/1125142352579801088/1125215846499893268/SPOILER_FkMg7ckWYAAutJl.jpg?width=357&height=558";
+      } else if (clickCount === 2) {
+        imageURL = "https://media.discordapp.net/attachments/1125142352579801088/1125213591600123954/6d950cdf068663ff2991a69812c50961.jpg";
+      }
+      
+      var imageElement = document.createElement("img");
+      imageElement.src = imageURL;
+      imageElement.className = "image";
+      container.appendChild(imageElement);
+
+      clickCount++;
+    }
+  </script>
+</body>
+</html>
